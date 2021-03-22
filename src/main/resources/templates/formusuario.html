@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}">Insert title here</title>
+<body>
+		<form th:action="@{/omdb/comprobarusuario}" th:object="${usuario}" method="get">
+			<h1>Inicio sesión Álvaro de Dios</h1>
+			<div>
+				<label>Email</label>
+				<div>
+					<input type="text" th:field="*{email}"/> 
+				</div>
+			</div>
+			<div>
+				<label>Contraseña</label>
+				<div>
+					<input type="password" th:field="*{contrasenia}"/> 
+				</div>
+			</div>
+			<div>
+				<div>
+					<input type="submit" value="Iniciar Sesión"/>
+				</div>
+			</div>
+				<div th:if="${mensaje != null}" th:text="${mensaje}">
+				</div>
+			
+			
+			
+		</form>
+			
+			<form th:action="@{/omdb/formularioAltaUsuario}">
+			<div>
+				<div>
+					<input type="submit" value="Nuevo usuario"/>	
+				</div>
+			</div>
+		</form>
+
+		
+	</div>
+</body>
+</html>

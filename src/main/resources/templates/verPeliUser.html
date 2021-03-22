@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}">Insert title here</title>
+
+</head>
+<body>
+		<form th:action="@{/omdb/verpelicula}" th:object="${pelicula}" th:method="get">
+			<h1>Ver pelicula buscada Álvaro de Dios</h1>
+			<div>
+				<label>Titulo</label>
+				<div>
+					<input type="text" th:field="*{Title}"/> 
+				</div>
+			</div>
+			<div>
+				<div>
+					<input type="submit" value="Buscar Pelicula"/>
+				</div>
+			</div>
+
+		</form>
+
+
+		<p th:text="${pelicula.Title}"></p>
+		<p th:text="${pelicula.Director}"></p>
+		<p th:text="${pelicula.Year}"></p>
+		<p th:text="${pelicula.Runtime}"></p>
+		<img th:src="${pelicula.Poster}">
+			
+			
+
+			
+		<form th:action="@{/omdb/verPeliculasGuardadas}">
+			<div>
+				<div>
+					<input type="submit" value="Ver peliculas guardadas"/>
+					
+				</div>
+			</div>
+		</form>
+		
+		<form th:action="@{/omdb/guardarPeliUsuario}">
+			<div>
+				<div>
+					<input type="submit" value="Guardar Pelicula"/>
+					
+				</div>
+			</div>
+		</form>
+		
+		<form th:action="@{/omdb/cerrarsesion}">
+			<div>
+				<div>
+					<input type="submit" value="Cerrar Sesión"/>
+					
+				</div>
+			</div>
+		</form>
+
+	
+	
+</body>
+</html>

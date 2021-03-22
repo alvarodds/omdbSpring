@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}">Insert title here</title>
+
+</head>
+<body>
+	<h1>Ver pelicula guardada Álvaro de Dios</h1>
+		<p th:text="${pelicula.Title}"></p>
+		<p th:text="${pelicula.Director}"></p>
+		<p th:text="${pelicula.Year}"></p>
+		<p th:text="${pelicula.Runtime}"></p>
+		<img th:src="${pelicula.Poster}">
+		<div>
+			<label>Puntuación:</label>
+			<p th:text="${pelicula.Rating}"></p>
+		</div>
+		
+		<div>
+			<label>Votaciones:</label>
+			<p th:text="${pelicula.Votes}"></p>
+		</div>
+		
+		<form th:action="@{/omdb/verPeliculasGuardadas}">
+			<div>
+				<div>
+					<input type="submit" value="Volver"/>
+					
+				</div>
+			</div>
+		</form>
+
+	
+	
+</body>
+</html>
